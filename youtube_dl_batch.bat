@@ -1,3 +1,4 @@
+ECHO "The length of each part: "
 SET _length=300
 @ECHO OFF
 SETLOCAL ENABLEDELAYEDEXPANSION
