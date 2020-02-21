@@ -1,6 +1,6 @@
-ECHO "The length of each part: "
-SET _length=300
 @ECHO OFF
+SET _length=300
+ECHO The length of each part: %_length% seconds
 SETLOCAL ENABLEDELAYEDEXPANSION
 for /f "tokens=1,2 delims=, " %%A in (%cd%\urllist.txt) do (
   SET _url=%%A
@@ -15,6 +15,7 @@ for /f "tokens=1,2 delims=, " %%A in (%cd%\urllist.txt) do (
 	  SET _sec=%%K
       SET /a _dursec=_min*60+_sec
       SET _count=1
+	  REM skip intro music
       SET _begin=11
 
       for /L %%F in (!_begin!,%_length%,!_dursec!) do (
